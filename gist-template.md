@@ -26,7 +26,7 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
     - [**The OR Operator**](#the-or-operator)
     - [**Flags**](#flags)
     - [**Character Escapes**](#character-escapes)
-  - [Author](#author)
+  - [**Author**](#author)
 
 ## Regex Components
 
@@ -107,6 +107,8 @@ A character escape is a special notation that **matches a literal character that
 
 In our email-matching RegEx, we use several character escapes to match literal dots and dashes in the email address. For example, `\.` matches a dot between the domain name and the top-level domain. `\.` also matches a dot within the top-level domain. `\.` also matches a dot within the user name or domain name if they contain one. Similarly, `\-` matches a dash within the user name or domain name if they contain one.
 
-## Author
+## **Author**
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+This tutorial is prepared by Parisa Darkhal, a GitHub user and developer. You can find her GitHub profile link here:
+
+[Parisa Darkhal](https://github.com/parisadarkhal)
