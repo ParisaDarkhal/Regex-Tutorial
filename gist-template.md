@@ -23,8 +23,8 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
     - [**Grouping Constructs**](#grouping-constructs)
     - [**Bracket Expressions**](#bracket-expressions)
     - [**Character Classes**](#character-classes)
-    - [The OR Operator](#the-or-operator)
-    - [Flags](#flags)
+    - [**The OR Operator**](#the-or-operator)
+    - [**Flags**](#flags)
     - [Character Escapes](#character-escapes)
   - [Author](#author)
 
@@ -83,9 +83,13 @@ In our email-matching RegEx, we use several character classes to specify the all
 - The second character class is `[\da-z\.-]`. This means that it can match any character from `\d`, which is equivalent to `[0-9]`, `[a-z]`, `.` , or `-`.
 - The third character class is `[a-z\.]`. This means that it can match any character from `[a-z]` or .
 
-### The OR Operator
+### **The OR Operator**
 
-### Flags
+The OR operator is a special character that matches either one of two alternatives. The OR operator is denoted by a vertical bar `|`. The OR operator has the lowest precedence among all RegEx operators, so it is usually used with parentheses `( )` to group the alternatives. For example, `(a|b)` matches either `a` or `b`. `(red|blue|green)` matches either `red`, `blue`, or `green`.
+
+In our email-matching RegEx, we do not use the OR operator explicitly, but we can think of some parts of the RegEx as using it implicitly. For example, the bracket expression `[a-z0-9_\.-]` can be seen as matching either one of the characters inside the brackets. Similarly, the grouping construct `([a-z\.]{2,6})` can be seen as matching either one of the possible top-level domains that have between two and six characters from `[a-z]` or `.` .
+
+### **Flags**
 
 ### Character Escapes
 
