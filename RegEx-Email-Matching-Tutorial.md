@@ -1,4 +1,4 @@
-# RegEx Tuturial for Matching an Email
+# RegEx Tutorial for Matching an Email
 
 ## Introduction
 
@@ -13,7 +13,7 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
 
 ## Table of Contents
 
-- [RegEx Tuturial for Matching an Email](#regex-tuturial-for-matching-an-email)
+- [RegEx Tutorial for Matching an Email](#regex-tutorial-for-matching-an-email)
   - [Introduction](#introduction)
   - [Summary](#summary)
   - [Table of Contents](#table-of-contents)
