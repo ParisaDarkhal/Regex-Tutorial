@@ -18,8 +18,8 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
   - [Summary](#summary)
   - [Table of Contents](#table-of-contents)
   - [Regex Components](#regex-components)
-    - [Anchors](#anchors)
-    - [Quantifiers](#quantifiers)
+    - [**Anchors**](#anchors)
+    - [**Quantifiers**](#quantifiers)
     - [Grouping Constructs](#grouping-constructs)
     - [Bracket Expressions](#bracket-expressions)
     - [Character Classes](#character-classes)
@@ -30,13 +30,28 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
 
 ## Regex Components
 
-### Anchors
+### **Anchors**
 
 In general, Anchors are special characters that specify the position of the match in the string. There are two types of anchors: `^` and `$`. The `^` anchor matches the beginning of the string. For example, `^a` matches any string that starts with `a`. The `$` anchor matches the end of the string. For example, `a$` matches any string that ends with `a`.
 
 In our email-matching RegEx, we use both anchors to ensure that the whole string is an email address. The `^` anchor matches the start of the string, and the `$` anchor matches the end of the string. **This means that nothing can precede or follow the email pattern.** For example, this RegEx will match `alice@example.com`, but NOT `hello alice@example.com` or `alice@example.com bye` (because of space).
 
-### Quantifiers
+### **Quantifiers**
+
+Quantifiers are special characters that specify how many times a character or a group of characters can be repeated in the match. There are several types of quantifiers: `*`, `+`, `?`, `{n}`, `{n,m}`, and `{n,}`. Here we explain them individually:
+
+- The `*` quantifier matches **zero or more** times. For example, `a*` matches any string that contains zero or more `a`s.
+- The `+` quantifier matches **one or more** times. For example, `a+` matches any string that contains one or more `a`s.
+- The `?` quantifier matches **zero or one** time. For example, `a?` matches any string that contains zero or one `a`.
+- The `{n}` quantifier matches **exactly n times**. For example, `a{3}` matches any string that contains exactly three `a`s.
+- The `{n,m}` quantifier matches **between n and m times**, inclusive. For example, `a{2,4}` matches any string that contains between two and four `a`s.
+- The `{n,}` quantifier matches **at least n times**. For example, `a{2,}` matches any string that contains at least two `a`s.
+
+We can see some of these quantifiers in our email-matching RegEx:
+
+- The first part of the email address RegEx is `[a-z0-9_\.-]+` . This means that it can contain **one or more characters** from the range `[a-z]`, `[0-9]`, `_` (underline), `.` (literal dot), or `-` (dash). For example, this part can match `alice`, `bob123`, or `john.doe`. As you see, some of the characters that have specific meaning in RegEx explanation (such as `.` or `-`), become literal when they go inside the brackets.
+- The second part of the email address RegEx is `[\da-z\.-]+`. This means that it can contain one or more characters from the range [0-9] (because of `\d`), `[a-z]`, `.` (dot), or `-`. For example, this part can match example, `gmail`, or `co.uk`.
+- The third part of the email address RegEx is `[a-z\.]{2,6}`. This means that it can contain **between two and six characters** from the range `[a-z]` or `.` (dot). For example, this part can match `.com`, `.org`, or `.co.in`.
 
 ### Grouping Constructs
 
