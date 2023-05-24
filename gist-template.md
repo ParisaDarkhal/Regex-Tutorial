@@ -25,7 +25,7 @@ This RegEx consists of several components, such as **anchors, quantifiers, group
     - [**Character Classes**](#character-classes)
     - [**The OR Operator**](#the-or-operator)
     - [**Flags**](#flags)
-    - [Character Escapes](#character-escapes)
+    - [**Character Escapes**](#character-escapes)
   - [Author](#author)
 
 ## Regex Components
@@ -91,7 +91,21 @@ In our email-matching RegEx, we do not use the OR operator explicitly, but we ca
 
 ### **Flags**
 
-### Character Escapes
+Flags are special characters that modify the behavior of the RegEx. Flags are usually added after the closing delimiter `/` of the RegEx. There are several flags available in different RegEx engines, but we will focus on three common ones: `i`, `g`, and `m`.
+
+- The `i` flag stands for **case-insensitive**. It makes the RegEx match both uppercase and lowercase letters. For example, `/a/i` matches both `A` and `a`.
+- The `g` flag stands for global. It makes the RegEx match **all occurrences** of the pattern in the string, not just the first one. For example, `/a/g` matches all `a`s in the string.
+- The `m` flag stands for multiline. It makes the anchors `^` and `$` match the **beginning** and **end** of each line in the string, not just the whole string. For example, `/^a/m` matches any line that starts with `a`.
+
+In our email-matching RegEx, we do not use any flags explicitly, but we can add them if we want to change the behavior of the RegEx. For example, if we want to match email addresses that have uppercase letters as well as lowercase letters, we can add the `i` flag like this:
+
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/i`
+
+### **Character Escapes**
+
+A character escape is a special notation that **matches a literal character that has a special meaning** in RegEx. A character escape is denoted by a backslash `\` followed by the character to be escaped. For example, `\.` matches a literal dot `.`, not any character as it would without the backslash.
+
+In our email-matching RegEx, we use several character escapes to match literal dots and dashes in the email address. For example, `\.` matches a dot between the domain name and the top-level domain. `\.` also matches a dot within the top-level domain. `\.` also matches a dot within the user name or domain name if they contain one. Similarly, `\-` matches a dash within the user name or domain name if they contain one.
 
 ## Author
 
